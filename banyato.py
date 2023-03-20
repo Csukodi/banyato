@@ -40,7 +40,38 @@ def megszamolas(m):
                 darab+=1
     return darab
 
+def atlagolas(m):
+    osszeg=0
+    darab=0
+    for seged_lista in m:
+        for elem in seged_lista:
+            if elem>0:
+                darab+=1
+                osszeg+=elem
+    return osszeg/darab
+
+
 
 atlagos_melyseg=0
 
-print(f"A tó felszíne: {megszamolas(melysegek)*1} m2, átlagos mélysége: {atlagos_melyseg} m")
+print(f"A tó felszíne: {megszamolas(melysegek)*1} m2, átlagos mélysége: {atlagolas(melysegek)/10:0.2f} m")
+
+
+print("4. feladat")
+
+def max_kivalasztas(m):
+    max_sor=0
+    max_oszlop=0
+    for i in range(1,len(m)):
+        for j in range(len(m[i])):
+            if m[max_sor][max_oszlop]<m[i][j]:
+                max_index=i
+                max_sor=j
+    print(m[max_sor][max_oszlop])
+        
+
+
+
+print(f"A tó legnagyobb mélysége: {max_kivalasztas(melysegek)} dm")
+# print("A legmélyebb helyek sor-oszlop koordinátái:")
+# print("(14; 20) (26; 11) (32; 16)")
