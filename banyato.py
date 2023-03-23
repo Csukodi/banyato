@@ -65,9 +65,9 @@ def max_kivalasztas(m):
     for i in range(1,len(m)):
         for j in range(len(m[i])):
             if m[max_sor][max_oszlop]<m[i][j]:
-                max_index=i
+                max_oszlop=i
                 max_sor=j
-    print(m[max_sor][max_oszlop])
+    return m[max_sor][max_oszlop]
         
 
 
